@@ -12,7 +12,7 @@ import numpy as np
 from experiment_1.particle import Particle
 from experiment_1.particle import PhysicalParticle
 
-class ConcreteTestParicle(Particle):
+class ConcreteTestParticle(Particle):
     """
     Clone of particle, but not abstract.
     Hence just a dummy to test.
@@ -27,7 +27,7 @@ class ParticleTestCase(unittest.TestCase):
         pos = np.array([1, 3, 2])
         vel = np.array([1, 1, 1])
         acc = np.array([0, 0, 0])
-        particle = ConcreteTestParicle(pos, vel, acc)
+        particle = ConcreteTestParticle(pos, vel, acc)
 
         self.assertTrue(np.allclose(particle.pos, pos), "Pos getter")
         self.assertTrue(np.allclose(particle.vel, vel), "Vel getter")
@@ -37,7 +37,7 @@ class ParticleTestCase(unittest.TestCase):
         pos = np.array([1, 3, 2])
         vel = np.array([1, 1, 1])
         acc = np.array([0, 0, 0])
-        particle = ConcreteTestParicle(pos, vel, acc)
+        particle = ConcreteTestParticle(pos, vel, acc)
 
         pos2 = np.array([1, 2, 3])
         vel2 = np.array([4, 5, 6])
@@ -55,7 +55,7 @@ class ParticleTestCase(unittest.TestCase):
         pos = np.array([1, 3, 2])
         vel = np.array([1, 1, 1])
         acc = np.array([0, 0, 0])
-        particle = ConcreteTestParicle(pos, vel, acc)
+        particle = ConcreteTestParticle(pos, vel, acc)
 
         pos2 = np.array([1, 2, 3, 2])
         vel2 = np.array([])
@@ -77,9 +77,9 @@ class ParticleTestCase(unittest.TestCase):
         nok = np.array([1, 1, 1, 1])
         ok2 = np.array([0, 0, 0])
 
-        self.assertRaises(ValueError, ConcreteTestParicle, ok1, nok, ok2)
-        self.assertRaises(ValueError, ConcreteTestParicle, nok, ok1, ok2)
-        self.assertRaises(ValueError, ConcreteTestParicle, ok2, ok1, nok)
+        self.assertRaises(ValueError, ConcreteTestParticle, ok1, nok, ok2)
+        self.assertRaises(ValueError, ConcreteTestParticle, nok, ok1, ok2)
+        self.assertRaises(ValueError, ConcreteTestParticle, ok2, ok1, nok)
 
 class PhysicalParticleTestCase(unittest.TestCase):
     def test_gravity_1(self):
