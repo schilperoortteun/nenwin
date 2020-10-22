@@ -73,7 +73,7 @@ class Particle(abc.ABC):
 class PhysicalParticle(Particle):
     """
     Particle with mass (negative mass allowed).
-    Has a gravity field defines around it, that can locally be inferred.
+    Has a gravity field defined around it, that can locally be inferred.
     """
 
     def __init__(self,
@@ -92,7 +92,7 @@ class PhysicalParticle(Particle):
         """
         Computes the Newtonian gravity force vector induced 
         by this particle to the
-        [other] paricle at the position of the other particle.
+        [other] particle at the position of the other particle.
         Note that no gravity constant is included in this computed force.
         """
         direction = (other.pos - self.pos)
